@@ -15,14 +15,14 @@ _This C# application will build a user-friendly Library Catalog, allowing users 
 
 | Behavior | Input | Output |
 |----------|:-----:|--------|
-| Eau Claire enters stylist name. | "Jane" | newStylist.name == "Jane" |
-| Eau Claire enters stylist specialty. | "Thick hair" | newStylist.specialty == "Thick hair" |
-| Eau Claire enters a client name to a stylist. | "Mary" | newStylist.client.name == "Mary" |
-| Eau Claire enters a client description to a stylist. | "Long time client" | newStylist.client.description == "Long time client" |
-| Eau Claire is greeted with a welcome splash page. | localhost:5000/ | route == "/" |
-| Eau Claire clicks on a link that sends her to a form where she can add a stylist. | "click" | HttpPost ActionResult' == Create(Stylist stylist) |
-| Eau Claire clicks on a stylist name and it goes to a page that displays all of that stylist's clients. | "click" | ActionResult ==  Details() |
-| Eau Claire clicks on a link that presents a form for a new client for a particular stylist. | "click" | HttPost ActionResult == Create (Client client) |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
 
 
 ## **Minimum Viable Product (MVP)**
