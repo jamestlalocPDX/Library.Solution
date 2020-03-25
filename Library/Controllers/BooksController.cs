@@ -45,7 +45,7 @@ namespace Library.Controllers
 
     public ActionResult Edit(int id)
     {
-      var thisBook = _db.Books.FirstOrDefault(book => book.BookId == id);
+      Book thisBook = _db.Books.FirstOrDefault(book => book.BookId == id);
       return View(thisBook);
     }
 
@@ -66,7 +66,7 @@ namespace Library.Controllers
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
-      var thisBook = _db.Books.FirstOrDefault(book => book.BookId == id);
+      Book thisBook = _db.Books.FirstOrDefault(book => book.BookId == id);
       _db.Books.Remove(thisBook);
       _db.SaveChanges();
       return RedirectToAction("Index");
