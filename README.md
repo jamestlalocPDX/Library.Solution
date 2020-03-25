@@ -27,15 +27,16 @@ _This C# application will build a user-friendly Library Catalog, allowing users 
 
 ## **Minimum Viable Product (MVP)**
 
-The MVP of this project is to allow Eau Claire to add new stylists, new clients to a specific stylist (this will not be available if no stylists have been added), and be able to select a stylist, see their details, and a list of clients that belong to that stylist.
+The MVP of this project is to allow users of this Library Catalog to add new books, new authors to a specific book (this will not be available if no books have been added), and be able to select a book, see its information, and a list of authors that belong to that book.
 
 Stretch goals include:
 
-* Adding a form where employees may search for a stylist by name and display a list of all results.
-* Adding a form where employees may also search for a client by name. Display a list of all results.
-* Adding a feature for adding an appointment to a client.
-* Adding a feature for adding an appointment to a stylist.
-* Adding a feature for keeping track of how much each stylist was paid for each appointment.
+* Adding a form where users may search for a book by name and display a list of all results.
+* Adding a form where users may also search for an author by name. Display a list of all results.
+* Adding a feature that lets a user add multiple authors to one book.
+* Adding a feature that lets a user search for the amount of copies of a book as well as check them out.
+* Adding a feature for keeping track of books that have been checked out.
+* Adding a feature that shows a list of overdue books.
 
 ## **Setup/Installation**
 
