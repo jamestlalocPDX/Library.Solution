@@ -73,16 +73,6 @@ Stretch goals include:
   * Add the exact location of your MySQL installation, and click OK. (This location is likely `C:\Program Files\MySQL\MySQL Server 8.0\bin`, but may differ depending on your specific installation.)
 7. Open MySQL Workbench and select the `Local instance 3306` server (it may have a different name). You will need to enter the password you set (We used `epicodus`). If it connects, you're all set.
 
-*MySQL Workbench Database Setup:*
-
-1. Open your terminal.
-2. Enter the command `mysql start` to run the MySQL server.
-3. Enter the command `mysql -u{server-name-goes-here} -p{password-goes-here}` to acces MySQL.
-4. Enter `CREATE DATABASE Jonathan_Carlos;` to create a database.
-5. Enter `USE Jonathan_Carlos`; to connect to the database. You can confirm that you have connected to your new database by executing the `SELECT DATABASE();`
-6. Enter `CREATE TABLE stylists (StylistId PRIMARY KEY, Name VARCHAR(255), Specialty VARCHAR(255));` to create a `stylists` table with columns titled `StylistId`, `Name`, and `Specialty`.
-7. Enter `CREATE TABLE clients (ClientId PRIMARY KEY, Name VARCHAR(255), Description VARCHAR(255), StylistId INT));` to create a `clients` table with columns titled `ClientId`, `Name`, `Description`, and `StylistId`.
-
 *Cloning this repository:*
 
 1. Open your terminal.
@@ -91,7 +81,7 @@ Stretch goals include:
 4. Open this repository from within your terminal and navigate to `HairSalon/`.
 5. Run the command `dotnet restore`.
 6. Run the command `dotnet build`.
-7. If build is successful, run the command `dotnet run`. If build failed, make necessary updates and repeat `dotnet restore` followed by `dotnet build`.
+7. If build is successful, run the command `dotnet ef migrations add Initial`. If build failed, make necessary updates and repeat `dotnet restore` followed by `dotnet build`.
 8. Use `dotnet run` to generate a local server.
 9. Copy and paste the given `localhost:5000` onto your URL.
 
@@ -103,7 +93,7 @@ Stretch goals include:
 4. Open this repository from within your terminal and navigate to `HairSalon/`.
 5. Run the command `dotnet restore`.
 6. Run the command `dotnet build`.
-7. If build is successful, run the command `dotnet run`. If build failed, make necessary updates and repeat `dotnet restore` followed by `dotnet build`.
+7. If build is successful, run the command `dotnet ef migrations add Initial`. If build failed, make necessary updates and repeat `dotnet restore` followed by `dotnet build`.
 8. Use `dotnet run` to generate a local server.
 9. Copy and paste the given `localhost:5000` onto your URL or use.
 
