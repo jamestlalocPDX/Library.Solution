@@ -1,104 +1,147 @@
-# _Library Catalog_
+# Library Catalog
 
-#### By _** Jonathan Carlos | 24 March 2020**_
+#### _3/20/2020_
 
-## Description
+#### _By Jonathan Carlos_
 
-This program will allow...
+## **Description**
 
-## Specifications:
+_This C# application will build a user-friendly Library Catalog, allowing users to manage and keep track of their books, the authors belonging to those books, the number of copies per book, and whether or not those books are checked out including their due date._
 
-| Behavior | Example Input | Example Output |
-|:--------:|:-------------:|:--------------:|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-
-## Setup/Installation Requirements
-
-### Install .NET Core
-
-#### on macOS:
-* _[Click here](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.106-macos-x64-installer) to download a .NET Core SDK from Microsoft Corp._
-* _Open the file (this will launch an installer which will walk you through installation steps. Use the default settings the installer suggests.)_
-
-#### on Windows:
-* _[Click here](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.203-windows-x64-installer) to download the 64-bit .NET Core SDK from Microsoft Corp._
-* _Open the .exe file and follow the steps provided by the installer for your OS._
-
-#### Install dotnet script
-_Enter the command ``dotnet tool install -g dotnet-script`` in Terminal (macOS) or PowerShell (Windows)._
-
-### Install MySQL and MySQL Workbench
-
-#### on macOS:
-_Download the MySQL Community Server DMG File [here](https://dev.mysql.com/downloads/file/?id=484914). Follow along with the installer until you reach the configuration page. Once you've reached Configuration, set the following options (or user default if not specified):_
-* use legacy password encryption
-* set password (and change the password field in appsettings.json file of this repository to match your password)
-* click finish
-* open Terminal and enter the command ``echo 'export PATH="/usr/local/mysql/bin:$PATH"' >> ~/.bash_profile`` if using Git Bash.
-* Verify MySQL installation by opening Terminal and entering the command ``mysql -uroot -p{your password here, omitted brackets}``. If you gain access to the MySQL command line, installation is complete. An error (e.g., -bash: mysql: command not found) indicates something went wrong.
-
-_Download MySQL Workbench DMG file [here](https://dev.mysql.com/downloads/file/?id=484391). Install MySQL Workbench to Applications folder. Open MySQL Workbench and select Local instance 3306 server, then enter the password you set. If it connects, you're all set._
-
-#### on Windows:
-_Download the MySQL Web Installer [here](https://dev.mysql.com/downloads/file/?id=484919) and follow along with the installer. Click "Yes" if prompted to update, and accept license terms._
-* Choose Custom setup type
-* When prompted to Select Products and Features, choose the following: MySQL Server (Will be under MySQL Servers) and MySQL Workbench (Will be under Applications)
-* Select Next, then Execute. Wait for download and installation (can take a few minutes)
-* Advance through Configuration as follows:
-  - High Availability set to Standalone.
-  - Defaults are OK under Type and Networking.
-  - Authentication Method set to Use Legacy Authentication Method.
-  - Set password to epicodus. You can use your own if you want but epicodus will be assumed in the lessons.
-  - Unselect Configure MySQL Server as a Windows Service.
-* Complete installation process
-
-_Add the MySQL environment variable to the System PATH. Instructions for Windows 10:_
-* Open the Control Panel and visit _System > Advanced System Settings > Environment Variables..._
-* Select _PATH..._, click _Edit..._, then _Add_.
-* Add the exact location of your MySQL installation and click _OK_. (This location is likely C:\Program Files\MySQL\MySQL Server 8.0\bin, but may differ depending on your specific installation.)
-* Verify installation by opening Windows PowerShell and entering the command ``mysql -uroot -p{your password here, omitted brackets}``. It's working correctly if you gain access to the MySQL command line. Exit MySQL by entering the command ``exit``.
-* Open MySQL Workbench and select Local instance 3306 server (may be named differently). Enter the password you set, and if it connects, you're all set.
-
-### Clone this repository
-
-_Enter the following commands in Terminal (macOS) or PowerShell (Windows):_
-* ``cd desktop``
-* ``git clone https://github.com/dustatron/DoctorsOffice``
-
-_Confirm that you have navigated to the DoctorsOffice directory (e.g., by entering the command_ ``pwd`` _in Terminal)._
-
-_Recreate the ``<DATABASE NAME>`` database using the following MySQL commands (in Terminal on macOS or PowerShell on Windows):_
-
-<CREATE DATABASE INFO HERE>
+## Preview
 
 
-_Run this application by entering the following command in Terminal (macOS) or PowerShell (Windows):_
-* ``cd DoctorsOffice``
-* ``dotnet restore``
-* ``dotnet build``
-* ``dotnet run`` or ``dotnet watch run``
+## **Behavior Driven Development**
 
-_To view/edit the source code of this application, open the contents of the HairSalon.Solution directory in a text editor or IDE of your choice (e.g., to open all contents of the directory in Visual Studio Code on macOS, enter the command_ ``code .`` _in Terminal)._
+| Behavior | Input | Output |
+|----------|:-----:|--------|
+| Eau Claire enters stylist name. | "Jane" | newStylist.name == "Jane" |
+| Eau Claire enters stylist specialty. | "Thick hair" | newStylist.specialty == "Thick hair" |
+| Eau Claire enters a client name to a stylist. | "Mary" | newStylist.client.name == "Mary" |
+| Eau Claire enters a client description to a stylist. | "Long time client" | newStylist.client.description == "Long time client" |
+| Eau Claire is greeted with a welcome splash page. | localhost:5000/ | route == "/" |
+| Eau Claire clicks on a link that sends her to a form where she can add a stylist. | "click" | HttpPost ActionResult' == Create(Stylist stylist) |
+| Eau Claire clicks on a stylist name and it goes to a page that displays all of that stylist's clients. | "click" | ActionResult ==  Details() |
+| Eau Claire clicks on a link that presents a form for a new client for a particular stylist. | "click" | HttPost ActionResult == Create (Client client) |
 
-## Technologies Used
-* _Git_
-* _HTML_
-* _CSS_
-* _C#_
-* _.NET Core 2.2_
-* _ASP.NET Core MVC (version 2.2)_
-* _Razor_
-* _dotnet script_
-* _MySQL 8.0 CE_
-* _MySQL Workbench 8.0 CE_
-* _Entity Framework Core 2.2_
-* _Michelle Mornin README Template_
 
-### License
+## **Minimum Viable Product (MVP)**
 
-*This webpage is licensed under the MIT license.*
+The MVP of this project is to allow Eau Claire to add new stylists, new clients to a specific stylist (this will not be available if no stylists have been added), and be able to select a stylist, see their details, and a list of clients that belong to that stylist.
+
+Stretch goals include:
+
+* Adding a form where employees may search for a stylist by name and display a list of all results.
+* Adding a form where employees may also search for a client by name. Display a list of all results.
+* Adding a feature for adding an appointment to a client.
+* Adding a feature for adding an appointment to a stylist.
+* Adding a feature for keeping track of how much each stylist was paid for each appointment.
+
+## **Setup/Installation**
+
+*Installing .NET Core* 
+
+1. Download the .NET Core SDK [Software Development Kit](https://dotnet.microsoft.com/download).
+2. Open the .Net Core SDK file and install.
+3. Confirm the installation was successful by runnning the `$ dotnet --version` command in your terminal (You should see something like this in the response: `2.2.105`).
+4. Install the dotnet script REPL tool by running the `$ dotnet tool install -g dotnet-script` command in your terminal.
+5. Restart your terminal to complete the installation.
+
+*Installing MySQL | MacOS:*
+
+1. Download the MySQL Community Server DMG File from [MySQL Community Server](https://dev.mysql.com/downloads/file/?id=484914)
+2. You can exit the mysql program by entering `exit`.
+3. Download the MySQL Workbench DMG File from [MySQL Workbench](https://dev.mysql.com/downloads/file/?id=484391). (Use the No thanks, just start my download link.)
+4. Install MySQL Workbench to Applications folder.
+5. Open MySQL Workbench and select the `Local instance 3306 server`. You will need to enter the password you set. (We used `epicodus`.) If it connects, you're all set.
+
+*Installing MySQL | Windows 10:*
+
+1. Download the MySQL Web Installer from [MySQL Downloads](https://dev.mysql.com/downloads/file/?id=484919) (Use the No thanks, just start my download link.).
+2. Choose `Custom` setup type.
+3. When prompted to `Select Products and Features`, make sure you select both `MySQL Server` (Under MySQL Servers), and `MySQL Workbench` (Under applications).
+4. When you reach `Configuration`:
+  * Set `High Availability` to `Standalone`. 
+  * Defaults are OK under `Type and Networking`. 
+  * Set `Authentication Method` to `Use Legacy Authenticationn Method`.
+  * Lastly, set your password and complete the installation process.
+5. You can exit the mysql program by entering `exit`
+6. Add the MySQL environment variable to the System PATH. We must include MySQL in the System Environment Path Variable. This is its own multi-step process. Instructions here are for Windows 10:
+  * Open the Control Panel and visit System > Advanced System Settings > Environment Variables...
+  * Then select PATH..., click Edit..., then Add.
+  * Add the exact location of your MySQL installation, and click OK. (This location is likely `C:\Program Files\MySQL\MySQL Server 8.0\bin`, but may differ depending on your specific installation.)
+7. Open MySQL Workbench and select the `Local instance 3306` server (it may have a different name). You will need to enter the password you set (We used `epicodus`). If it connects, you're all set.
+
+*MySQL Workbench Database Setup:*
+
+1. Open your terminal.
+2. Enter the command `mysql start` to run the MySQL server.
+3. Enter the command `mysql -u{server-name-goes-here} -p{password-goes-here}` to acces MySQL.
+4. Enter `CREATE DATABASE Jonathan_Carlos;` to create a database.
+5. Enter `USE Jonathan_Carlos`; to connect to the database. You can confirm that you have connected to your new database by executing the `SELECT DATABASE();`
+6. Enter `CREATE TABLE stylists (StylistId PRIMARY KEY, Name VARCHAR(255), Specialty VARCHAR(255));` to create a `stylists` table with columns titled `StylistId`, `Name`, and `Specialty`.
+7. Enter `CREATE TABLE clients (ClientId PRIMARY KEY, Name VARCHAR(255), Description VARCHAR(255), StylistId INT));` to create a `clients` table with columns titled `ClientId`, `Name`, `Description`, and `StylistId`.
+
+*Cloning this repository:*
+
+1. Open your terminal.
+2. Navigate to the desired directory in which you want to clone this repository.
+3. Use the command `git clone https://github.com/jonathancarlos21/Eau-Claires-Salon` to clone this repository.
+4. Open this repository from within your terminal and navigate to `HairSalon/`.
+5. Run the command `dotnet restore`.
+6. Run the command `dotnet build`.
+7. If build is successful, run the command `dotnet run`. If build failed, make necessary updates and repeat `dotnet restore` followed by `dotnet build`.
+8. Use `dotnet run` to generate a local server.
+9. Copy and paste the given `localhost:5000` onto your URL.
+
+*Downloading this repository:*
+
+1. On the top right of this page, click the "Clone or download" button.
+2. Click on "Download ZIP."
+3. Click the downloaded file to unzip and extract this repository to your desired directory.
+4. Open this repository from within your terminal and navigate to `HairSalon/`.
+5. Run the command `dotnet restore`.
+6. Run the command `dotnet build`.
+7. If build is successful, run the command `dotnet run`. If build failed, make necessary updates and repeat `dotnet restore` followed by `dotnet build`.
+8. Use `dotnet run` to generate a local server.
+9. Copy and paste the given `localhost:5000` onto your URL or use.
+
+## **Known Bugs**
+
+There are no known bugs at this time.
+
+## **Support and contact details**
+
+If you have any questions, comments, or concerns, please feel free to contact the content creator at examplemail@company.net 
+
+## **Technologies used**
+
+* _Git 2.23.0_
+
+* _C# language_
+
+* _.NET Core 2.2.106_
+
+* _dotnet script 0.50.1_
+
+* _Visual Studio Code 1.43.1_
+
+* _Model-View-Controller(MVC) framework_
+
+* _MySQL 8.0.15_
+
+* _MySQL Workbench 8.0.15_
+
+* _Entity Framework Core 2.2.4_
+
+* _Language-Integrated Query (LINQ)_
+
+* _ASP.NET Razor_
+
+* GitBash
+
+## **License**
 
 Copyright (c) 2020 **_Library Catalog_**
+
+This software is licensed under the MIT license.
